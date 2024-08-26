@@ -1,0 +1,37 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ebebeb;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  background: rgb(99 102 241);
+}
+
+/* react-datatable-component custom css */
+.rdt_TableRow:hover,
+.rdt_TableRow {
+  cursor: pointer;
+  background: #e9e9e9;
+}
