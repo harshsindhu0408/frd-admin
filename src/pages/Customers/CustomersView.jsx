@@ -7,6 +7,7 @@ import BackButton from "../../components/common/BackButton";
 import AddressView from "./AddressView";
 import CustomButton from "../../components/common/CustomButton";
 import deleteCustomer from "../../actions/customers/deleteCustomer";
+import dateFormatter from "../../utils/dateFormatter";
 
 const UserView = () => {
   const navigate = useNavigate();
@@ -54,7 +55,7 @@ const UserView = () => {
                   {customer.name}
                 </h3>
                 <p className="max-w-2xl mt-1 text-sm text-gray-500">
-                  #{customer._id}
+                  Customer Id: {customer._id}
                 </p>
               </div>
 
@@ -88,23 +89,23 @@ const UserView = () => {
                 <div className="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                   <dt className="text-sm font-medium text-gray-500">DOB</dt>
                   <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    {customer.dob}
+                    {dateFormatter(customer.dob)}
                   </dd>
                 </div>
                 <div className="px-4 py-5 bg-white sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                   <dt className="text-sm font-medium text-gray-500">
-                    Created at
+                    Account created on
                   </dt>
                   <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    {customer.createdAt}
+                    {dateFormatter(customer.createdAt)}
                   </dd>
                 </div>
                 <div className="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                   <dt className="text-sm font-medium text-gray-500">
-                    Updated at
+                    Last Updated on
                   </dt>
                   <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    {customer.updatedAt}
+                    {dateFormatter(customer.updatedAt)}
                   </dd>
                 </div>
               </dl>

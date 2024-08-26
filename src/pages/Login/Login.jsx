@@ -29,7 +29,7 @@ const Login = () => {
       <div className="max-w-md relative flex flex-col px-4 py-6 rounded-md text-black shadow ">
         {/* form-heading */}
         <div className="text-2xl font-bold mb-2 text-[#1e0e4b] text-center">
-          Welcome back to <span className="text-[#7747ff]">Chelo</span>
+          Welcome back to <span className="text-[#7747ff]">FRD Admin</span>
         </div>
         <div className="text-sm font-normal mb-4 text-center text-[#1e0e4b]">
           Log in to your admin account

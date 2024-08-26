@@ -23,11 +23,11 @@ const links = [
     url: "/categories",
     icon: "https://img.icons8.com/plumpy/24/sorting-answers.png",
   },
-  // {
-  //   text: "Customers",
-  //   url: "/customers",
-  //   icon: "https://img.icons8.com/windows/32/user.png",
-  // },
+  {
+    text: "Customers",
+    url: "/customers",
+    icon: "https://img.icons8.com/windows/32/user.png",
+  },
 ];
 
 const Sidebar = () => {
@@ -49,7 +49,7 @@ const Sidebar = () => {
           to="/"
           className="text-3xl font-semibold text-gray-800 cursor-pointer"
         >
-          Chelo<span className="text-indigo-500 ml-1">Admin</span>
+          FRD<span className="text-indigo-500 ml-1">Admin</span>
         </Link>
       </div>
 

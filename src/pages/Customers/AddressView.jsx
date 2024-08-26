@@ -1,5 +1,6 @@
 import React from "react";
 import getAddresses from "../../actions/customers/getAddresses";
+import dateFormatter from "../../utils/dateFormatter";
 
 const AddressView = ({ id }) => {
   const [addresses, setAddresses] = React.useState([]);
@@ -72,13 +73,13 @@ const AddressView = ({ id }) => {
                   Created at
                 </dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                  {address.createdAt}
+                  {dateFormatter(address.createdAt)}
                 </dd>
                 <dt className="text-sm font-medium text-gray-500">
                   Updated at
                 </dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                  {address.updatedAt}
+                  {dateFormatter(address.updatedAt)}
                 </dd>
               </div>
             </div>

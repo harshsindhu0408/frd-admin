@@ -1,2 +1,2 @@
-# Chelo-admin
+# FRD-admin
 ### React-Tailwind Webapp
