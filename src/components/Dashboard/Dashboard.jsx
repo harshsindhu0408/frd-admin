@@ -6,9 +6,14 @@ import TotalProducts from "./Components/TotalProducts";
 import ProductsData from "./ProductsData";
 import SalesData from "./SalesData";
 import CustomersData from "./CustomersData";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleMenu } from "../../redux/navSlice";
 
 const DashBoard = () => {
   const [greeting, setGreeting] = useState("");
+  const dispatch = useDispatch();
+  const isMenuOpen = useSelector((state) => state.nav.isMenuOpen);
 
   useEffect(() => {
     const getGreeting = () => {
@@ -30,12 +35,22 @@ const DashBoard = () => {
 
     getGreeting();
   }, []);
+  const togleMenuHandler = () => {
+    dispatch(toggleMenu());
+  };
   return (
-    <main className="relative h-screen overflow-hidden bg-gray-100">
-      <div className="flex items-start justify-between">
-        <div className="flex flex-col mt-8 w-full md:space-y-4">
-          <div className="h-screen px-4 pb-24 overflow-auto md:px-6">
-            <h1 className="text-4xl font-semibold text-gray-800">{greeting}</h1>
+    <main className="relative w-full h-screen overflow-hidden bg-gray-100">
+      <div className="flex w-full items-start justify-between">
+        <div className="flex lg:mx-10 flex-col mt-8 w-full md:space-y-4">
+          <div className="h-screen w-full px-4 pb-24 overflow-auto md:px-6">
+            <div className="flex cursor-pointer items-center flex-row gap-x-6">
+              {
+                !isMenuOpen && <GiHamburgerMenu onClick={() => togleMenuHandler()} size={25} />
+              }
+              <h1 className="text-4xl font-semibold text-gray-800">
+                {greeting}
+              </h1>
+            </div>
             <div className="flex flex-col items-center w-full my-6 space-y-4 md:space-x-4 md:space-y-0 md:flex-row">
               <div className="flex items-center w-full space-x-4">
                 <TotalProducts />

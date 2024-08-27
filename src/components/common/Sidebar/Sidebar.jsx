@@ -1,5 +1,8 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleMenu } from "../../../redux/navSlice";
 
 // add sidebar links here
 const links = [
@@ -33,6 +36,10 @@ const links = [
 const Sidebar = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const isMenuOpen = useSelector((state) => state.nav.isMenuopen);
+
+  // if(!isMenuOpen) return null;
 
   // handle logout
   const handleLogout = () => {
@@ -40,11 +47,17 @@ const Sidebar = () => {
     window.location.href = "/";
   };
 
+  const togleMenuHandler = () => {
+    dispatch(toggleMenu());
+  };
+
   return (
     // ====================================================Sidebar====================================================
     <div className="flex overflow-y-auto flex-col bg-white w-full py-4 border-r min-h-screen relative">
       {/* header */}
-      <div className="flex items-center justify-center h-16 border-b">
+      <div className="flex cursor-pointer items-center justify-center gap-x-8 h-16 border-b">
+        <GiHamburgerMenu onClick={() => togleMenuHandler()} size={25} />
+
         <Link
           to="/"
           className="text-3xl font-semibold text-gray-800 cursor-pointer"
